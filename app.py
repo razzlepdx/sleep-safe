@@ -38,14 +38,14 @@ def index():
         markers=[
           {
              'icon': green_tent,
-             'lat': 45.5435634,
-             'lng': -122.674997,
+             'lat': 45.5333114,
+             'lng': -122.7058782,
              'infobox': "<div style='float:left;'>" +
              			"<p style='margin-top:0;'><b>Wallace Park</b></p>" +
              			"<p style='margin-top:0;'><span style='color: green; font-weight: bold;'>Safe Rating: 80%</span></p>" +
              			"</div>" +
              			"<div style='float:right; font-size:40px; font-weight: bold; margin-left: 10px;'>" +
-             			">" +
+             			"<a href='./site' style='text-decoration:none;'>></a>" +
              			"</div>" +
              			"</div>"
           },
