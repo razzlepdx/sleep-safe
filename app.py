@@ -1,10 +1,10 @@
 from flask import Flask, request, redirect, render_template, flash, url_for, json, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-
 from flask_googlemaps import GoogleMaps
-#from models.user import User
+from flask_googlemaps import Map
 import os
+from keys import *
 
 # app and db dev environment settings:
 ######################################
@@ -17,6 +17,7 @@ app.secret_key = 'ZAj08N/$3m]XHjHy!rX R/~?X,9RW@UL'
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+GoogleMaps(app, key=keys())
 
 # routes:
 # all routes get a decorator `@app.route` that takes at least one parameter - the url.  
@@ -26,8 +27,47 @@ db = SQLAlchemy(app)
 # Sleep Safe landing page - accessed at localhost:5000 for now
 @app.route("/", methods=['GET'])
 def index():
-    ''' displays the Sleep Safe landing page '''
-    return render_template('index.html')
+    ''' displays the Sleep Safe map '''
+    green_tent = url_for('static', filename='images/Pin-Tent-Green.png')
+    red_tent = url_for('static', filename='images/Pin-Tent-Red.png')
+    user_location = url_for('static', filename='images/Dot-User-Location.png')
+    mymap = Map(
+        identifier="mymap",
+        lat=45.5183037,
+        lng=-122.6810941,
+        markers=[
+          {
+             'icon': green_tent,
+             'lat': 45.5435634,
+             'lng': -122.674997,
+             'infobox': "<b>Puppet</b>"
+          },
+          {
+             'icon': green_tent,
+             'lat': 45.5126438,
+             'lng': -122.7149248,
+             'infobox': "<b>Puppet</b>"
+          },
+          {
+             'icon': red_tent,
+             'lat': 45.4724105,
+             'lng': -122.6648244,
+             'infobox': "<b>Oaks Park</b>"
+          },
+          {
+             'icon': user_location,
+             'lat': 45.5183037,
+             'lng': -122.6810941,
+             'infobox': "<b>Oaks Park</b>"
+          }          
+        ],
+        style="height:100vh;width:100%;margin:0;",
+        zoom=13,
+        maptype_control=False,
+        streetview_control=False,
+        fullscreen_control=False
+    )  
+    return render_template('index.html', mymap=mymap, green_tent=green_tent, red_tent=red_tent)
 
 @app.route("/site", methods=['GET'])
 def location_detail():
