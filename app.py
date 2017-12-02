@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 
 from flask_googlemaps import GoogleMaps
-from models.user import User
 import os
 
 # app and db dev environment settings:
