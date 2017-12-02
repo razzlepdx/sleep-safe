@@ -1,0 +1,4 @@
+flask==0.12.2
+flask_sqlalchemy==2.3.2
+flask_googlemaps==0.2.5
+requests==2.18.4
