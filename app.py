@@ -38,27 +38,47 @@ def index():
         markers=[
           {
              'icon': green_tent,
-             'lat': 45.5435634,
-             'lng': -122.674997,
-             'infobox': "<b>Puppet</b>"
+             'lat': 45.5333114,
+             'lng': -122.7058782,
+             'infobox': "<div style='float:left;'>" +
+             			"<p style='margin-top:0; font-weight: bold;'>Wallace Park</p>" +
+             			"<p style='margin-top:0;'><span style='color: green; font-weight: bold;'>Safe Rating: 80%</span></p>" +
+             			"</div>" +
+             			"<div style='float:right; font-size:40px; font-weight: bold; margin-left: 10px;'>" +
+             			"<a href='./site' style='text-decoration:none; color:#a4d4ff;'>></a>" +
+             			"</div>" +
+             			"</div>"
           },
           {
              'icon': green_tent,
              'lat': 45.5126438,
              'lng': -122.7149248,
-             'infobox': "<b>Puppet</b>"
+             'infobox': "<div style='float:left;'>" +
+             			"<p style='margin-top:0; font-weight: bold;'>Oaks Park</p>" +
+             			"<p style='margin-top:0;'><span style='color: green; font-weight: bold;'>Safe Rating: %67</span></p>" +
+             			"</div>" +
+             			"<div style='float:right; font-size:40px; font-weight: bold; margin-left: 10px;'>" +
+             			">" +
+             			"</div>" +
+             			"</div>"
           },
           {
              'icon': red_tent,
              'lat': 45.4724105,
              'lng': -122.6648244,
-             'infobox': "<b>Oaks Park</b>"
+             'infobox': "<div style='float:left;'>" +
+             			"<p style='margin-top:0; font-weight: bold;'>Puppet</p>" +
+             			"<p style='margin-top:0;'><span style='color: red; font-weight: bold;'>Safe Rating: 20%</span></p>" +
+             			"</div>" +
+             			"<div style='float:right; font-size:40px; font-weight: bold; margin-left: 10px;'>" +
+             			">" +
+             			"</div>" +
+             			"</div>"
           },
           {
              'icon': user_location,
              'lat': 45.5183037,
-             'lng': -122.6810941,
-             'infobox': "<b>Oaks Park</b>"
+             'lng': -122.6810941
           }          
         ],
         style="height:100vh;width:100%;margin:0;",
