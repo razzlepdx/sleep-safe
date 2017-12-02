@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, render_template, flash, url_for, json, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_googlemaps import GoogleMaps
-from models.user import User
+#from models.user import User
 import os
 
 # app and db dev environment settings:
