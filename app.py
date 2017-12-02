@@ -8,7 +8,7 @@ import os
 
 # app and db dev environment settings:
 ######################################
-db_uri = 'mysql+pymysql://sleep-safe:sleep-safe@localhost:8889/sleep-safe'
+db_uri = 'mysql+pymysql://sleep-safe:sleep-safe@localhost:3306/sleep-safe'
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_ECHO'] = True
