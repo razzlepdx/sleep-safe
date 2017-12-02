@@ -28,30 +28,46 @@ GoogleMaps(app, key=keys())
 @app.route("/", methods=['GET'])
 def index():
     ''' displays the Sleep Safe map '''
+    green_tent = url_for('static', filename='images/Pin-Tent-Green.png')
+    red_tent = url_for('static', filename='images/Pin-Tent-Red.png')
+    user_location = url_for('static', filename='images/Dot-User-Location.png')
     mymap = Map(
         identifier="mymap",
         lat=45.5435634,
         lng=-122.674997,
         markers=[
           {
-             'icon': 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+             'icon': green_tent,
              'lat': 45.5435634,
              'lng': -122.674997,
              'infobox': "<b>Puppet</b>"
           },
           {
-             'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+             'icon': green_tent,
+             'lat': 45.5126438,
+             'lng': -122.7149248,
+             'infobox': "<b>Puppet</b>"
+          },
+          {
+             'icon': red_tent,
              'lat': 45.4724105,
              'lng': -122.6648244,
              'infobox': "<b>Oaks Park</b>"
-          }
+          },
+          {
+             'icon': user_location,
+             'lat': 45.5183037,
+             'lng': -122.6810941,
+             'infobox': "<b>Oaks Park</b>"
+          }          
         ],
-        zoom=10,
+        style="height:100vh;width:100%;margin:0;",
+        zoom=13,
         maptype_control=False,
         streetview_control=False,
         fullscreen_control=False
     )  
-    return render_template('index.html', mymap=mymap)
+    return render_template('index.html', mymap=mymap, green_tent=green_tent, red_tent=red_tent)
 
 @app.route("/site", methods=['GET'])
 def location_detail():
