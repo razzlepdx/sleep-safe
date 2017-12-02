@@ -101,6 +101,7 @@ ENV/
 .mypy_cache/
 
 .DS_Store
+.vscode
 
 # secret keys
 keys.py
