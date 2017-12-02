@@ -1,5 +1,9 @@
-from flask import render_template
-from app import app
+from app import app, bcrypt, db
+from flask import Flask, request, redirect, render_template, session, flash, url_for, make_response
+
+from models import  User
+
+from flask_login import login_user, login_required, logout_user, LoginManager, current_user
 
 # routes:
 # all routes get a decorator `@app.route` that takes at least one parameter - the url.

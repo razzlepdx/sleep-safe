@@ -1,24 +1,42 @@
-from flask import Flask, request, redirect, render_template, flash, url_for, json, make_response
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import get_debug_queries,  SQLAlchemy, Pagination
+from flask import Flask
 from flask_bcrypt import Bcrypt
-
-# from flask_googlemaps import GoogleMaps
-# from models.user import User
 import os
 
-# app and db dev environment settings:
-######################################
-db_uri = 'mysql+pymysql://sleep-safe:sleep-safe@localhost:3306/sleep-safe'
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-app.config['SQLALCHEMY_ECHO'] = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'ZAj08N/$3m]XHjHy!rX R/~?X,9RW@UL'
+app.config.from_object("config.BaseConfig")
+
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 
-# runs the app, always the last line
-if __name__ == '__main__':
-    app.run(threaded = True)
+from views import *
+
+
+def sql_debug(response):
+    queries = list(get_debug_queries())
+    query_str = ''
+    total_duration = 0.0
+    for q in queries:
+        total_duration += q.duration
+        stmt = str(q.statement % q.parameters).replace('\n', '\n       ')
+        query_str += 'Query: {0}\nDuration: {1}ms\n\n'.format(stmt, round(q.duration * 1000, 2))
+
+    print('=' * 80)
+    print(' SQL Queries - {0} Queries Executed in {1}ms'.format(len(queries), round(total_duration * 1000, 2)))
+    print('=' * 80)
+    print(query_str.rstrip('\n'))
+    print('=' * 80 + '\n')
+
+    return response
+
+
+if app.debug:
+    app.after_request(sql_debug)
+
+
+
+if __name__ == "__main__":
+    app.run()
