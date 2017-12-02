@@ -81,7 +81,7 @@ def index():
              'lng': -122.6810941
           }          
         ],
-        style="height:65vh;width:100%;margin:0;",
+        style="height:73vh;width:100%;margin:0;",
         zoom=11,
         maptype_control=False,
         streetview_control=False,
