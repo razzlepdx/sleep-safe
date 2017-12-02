@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-            {{"decoupled-map"|googlemap_js(45.5183037, -122.6810941, markers=[(45.5183037, -122.6810941)])}}
-            {{mymap.js}}
-    </head>
-    <body>
-        {{mymap.html}}
-    </body>
-</html>
+
+{% block title %}Index{% endblock %}
+    <header>
+        <div>
+            <img src=/assets/Pin-Tent-Green.png>
+            <h1>SleepSafe</h1>           
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {{"decoupled-map"|googlemap_js(45.5183037, -122.6810941, markers=[(45.5183037, -122.6810941)])}}
+        {{mymap.js}}
+    </header>   
+{% block content %}
+    {{mymap.html}}
+{% endblock %}
+{% extends "base.html" %}

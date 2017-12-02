@@ -1,13 +1,9 @@
-{% load static from staticfiles %}
-
 <!DOCTYPE html>
 <html>
     {# Make modifiable head elements #}
     <head>
         <title>{% block title %}{% endblock title %}</title>
-        <!-- {% block head_favicon %}
-            <link rel="icon" type="image/png" href="{{ STATIC_URL }}images/favicon.ico">
-        {% endblock head_favicon %} -->
+        
         {% block head_meta %}
             {% block head_meta_charset %}
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />                      
@@ -21,31 +17,16 @@
         {% endblock head_meta %}
         {% block head_css %}
             {% block head_css_site %}                      
-                <!-- <link rel="stylesheet" href="{% static 'css/layout.css' %}"  media="screen">                       -->
             {% endblock head_css_site %}
             {% block head_css_section %}
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
             rel="stylesheet" crossorigin="anonymous"
             integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb">
-            {% endblock head_css_section %}
-            
+            {% endblock head_css_section %}          
         {% endblock head_css %}
     </head>
 
     <body>
-        {# Header Navigation Menu #}
-        <header>
-            <div>
-                <img>
-                <h1>SleepSafe</h1>
-                
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </header>
-
         {# The Document Body #}
         <div id="site-wrapper">
             {% block content %}
@@ -56,27 +37,20 @@
         {# Footer Navigation Menu #}
         <footer>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                        aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                      
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                              <a class="nav-link" href="#">My Network <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">My Network <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Recent</a>
                             </li>                          
-                          </ul>                     
-                        </div>
-                      </nav>
+                        </ul>                     
+                    </div>
+                </nav>
         </footer>
     </body>
 
