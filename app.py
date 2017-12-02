@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect, render_template, flash, url_for, json, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_googlemaps import GoogleMaps
+from models.user import User
 import os
 
 # app and db dev environment settings:
@@ -15,7 +16,9 @@ app.secret_key = 'ZAj08N/$3m]XHjHy!rX R/~?X,9RW@UL'
 db = SQLAlchemy(app)
 
 # routes:
-#########
+# all routes get a decorator `@app.route` that takes at least one parameter - the url.  
+# optional parameter: HTTP request types go here too.  if left blank it defaults to a "GET" request
+####################################################################################################
 
 # Sleep Safe landing page - accessed at localhost:5000 for now
 @app.route("/", methods=['GET'])

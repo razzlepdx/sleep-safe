@@ -16,7 +16,7 @@ Rachel Wilson
 
 ## Setup
 
-Find instructions to setup and run our app [here](SETUP.md).
+Find instructions to setup and run our app [here](https://github.com/razzlepdx/sleep-safe/blob/master/SETUP.md).
 
 ## Next Steps
 
