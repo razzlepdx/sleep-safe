@@ -41,21 +41,10 @@ Follow these steps to successfully run this app on your machine!
 
         If installed, this will return the path `/usr/local/bin/python3`
 
-3. [Install Flask](http://flask.pocoo.org/docs/0.12/installation/)
-
-    Check that it installed correctly:
-
-      ```
-      flask --version
-      ```
-      
-      If Flask is installed, this will return your version.  
-      We are using Flask 0.12.2, so check that your version matches.
-
 
 ## 2. Download the project
 
-1. [Fork this repository](https://github.com/razzlepdx/sleep-safe)
+1. [Clone this repository](https://github.com/razzlepdx/sleep-safe)
 
 2. Clone the git repository to your machine
 
