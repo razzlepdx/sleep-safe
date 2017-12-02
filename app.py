@@ -33,8 +33,8 @@ def index():
     user_location = url_for('static', filename='images/Dot-User-Location.png')
     mymap = Map(
         identifier="mymap",
-        lat=45.5435634,
-        lng=-122.674997,
+        lat=45.5183037,
+        lng=-122.6810941,
         markers=[
           {
              'icon': green_tent,
