@@ -104,3 +104,6 @@ ENV/
 
 # secret keys
 keys.py
+
+.idea/
+

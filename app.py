@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template, flash, url_for, json, make_response
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 import os
@@ -14,6 +15,7 @@ app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'ZAj08N/$3m]XHjHy!rX R/~?X,9RW@UL'
 
+bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 GoogleMaps(app, key=keys())
 
