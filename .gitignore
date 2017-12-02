@@ -101,5 +101,6 @@ ENV/
 .mypy_cache/
 
 .DS_Store
+.vscode
 
 .idea/
