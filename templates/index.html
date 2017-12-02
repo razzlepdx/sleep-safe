@@ -1,14 +1,25 @@
-
-{% block title %}Index{% endblock %}
     <header>
-        <div>
-            <img src=/assets/Pin-Tent-Green.png>
-            <h1>SleepSafe</h1>           
+        <div class="container" style="background:#19086D">
+            <div class="row" style="padding-left:13%; padding-top:2%">
+                <div class="col-xs-5">
+                    <img src='{{ url_for('static', filename='images/Pin-Tent-Green.png') }}' />
+                </div>
+                <div class="col-xs-7">
+                    <h1 style="color:white; padding-top:5px">SleepSafe</h1>
+                </div>     
+            </div>
         </div>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="row" style="background:#19086D; padding-left:16%;">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="col-xs-9">
+                    <input class="form-control mr-sm-2 pull-left" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <div>
+                        <button class="btn btn-outline-success my-2 my-sm-0 pull-right" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+   
         {{"decoupled-map"|googlemap_js(45.5183037, -122.6810941, markers=[(45.5183037, -122.6810941)])}}
         {{mymap.js}}
     </header>   
