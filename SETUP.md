@@ -94,14 +94,16 @@ Follow these steps to successfully run this app on your machine!
       - username: sleep-safe
       - password: sleep-safe
 
-## 4. Run the app
+    - `$ export DATABASE_URL='connection-to-your-db`
+    - for example :
+    - `$ export DATABASE_URL='mysql+pymysql://user:password@host:port/db_name`
 
-1. From the virtual environment created in step 3, run:
+## 4. Set up all tables
+    - `$ python manage.py db upgrade`
 
-    ```sh
-    python app.py
-    ```
-
-    The app will now be running in your browser at [http://localhost:5000/](http://localhost:5000/)
+## 5. Run the app
+    `$ python manage.py db runserver`
+    
+The app will now be running in your browser at [http://localhost:5000/](http://localhost:5000/)
 
 	

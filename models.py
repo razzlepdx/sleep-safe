@@ -1,6 +1,5 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from datetime import datetime
 
 from app import db, bcrypt
 
@@ -13,15 +12,11 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, ForeignKey('user.id'))
     location_id = db.Column(db.Integer, ForeignKey('location.id'))
 
-
-
     def __init__(self, title):
         self.title = title
 
     def __repr__(self):
         return 'title: {}'.format(self.title)
-
-
 
 
 class Location(db.Model):
@@ -40,9 +35,6 @@ class Location(db.Model):
         return 'name: {} '.format(self.name)
 
 
-
-
-from app import db, bcrypt
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
