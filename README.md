@@ -9,10 +9,12 @@ a Flask app helping vulnerable populations find a safe place to sleep outdoors. 
 
 ## Contributors
 
-Rachel Wilson
-Schola Choi
-
-
+* Rachel Wilson
+* Schola Choi
+* Sonja Ellicott
+* Mila Klimkina
+* Stephanie Roth
+* Adriana Chen
 
 ## Setup
 
